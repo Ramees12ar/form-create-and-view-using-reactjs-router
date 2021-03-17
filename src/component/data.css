@@ -10,7 +10,7 @@ table, th, td {
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
-  }
+}
 table{
     width: 100%;
 }
@@ -19,8 +19,20 @@ th{
     font-size: 20px;
     font-weight: bold;
 }
+button{
+    cursor: pointer;
+}
+button:hover{
+    background-color: whitesmoke;
+}
 td{
     width:50px;
     font-size: 16px;
-    font-weight: lighter;
+    font-weight: bold;
+}
+.cap{
+    text-transform: capitalize;
+}
+.upp{
+    text-transform: uppercase;
 }
