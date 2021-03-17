@@ -1,0 +1,26 @@
+.head2{
+    margin: auto;
+    width: 50%;
+    height:100%;
+}
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+table{
+    width: 100%;
+}
+th{
+    width:50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+td{
+    width:50px;
+    font-size: 16px;
+    font-weight: lighter;
+}

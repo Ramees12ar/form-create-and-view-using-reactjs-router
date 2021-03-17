@@ -1,0 +1,33 @@
+
+
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.head{
+    margin: auto;
+    width:55%;
+    background-color: cyan;
+}
+input{
+    width:200px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4px;
+}
+button{
+    color: aquamarine;
+    background-color: brown;
+    width:100px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.label1{
+    width:230px;
+    float:left;
+    margin: 4px;
+}
