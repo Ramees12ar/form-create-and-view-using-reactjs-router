@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './data.css'
 class Data extends Component {
     constructor(props) {
@@ -60,7 +61,9 @@ class Data extends Component {
                                 <tr id={k}>
                                         <td class="cap">{i.fname}</td>
                                         <td class="upp">{i.lname}</td>
-                                        <td><button style={{backgroundColor:"green"}} onClick={() => {this.detail(k)}}>view</button>
+                                        <td>
+                                            {/* <button style={{backgroundColor:"green"}} onClick={() => {this.detail(k)}}>view</button> */}
+                                            <Link to={`view/${k}`}>View</Link>
                                             <button onClick={() => {this.delete(k)}}>delete</button>
                                         </td>
                                 </tr>

@@ -24,7 +24,8 @@ function App() {
 			  <Switch> 
 			      <Route exact path='/' component={Home}></Route> 
             <Route exact path='/data' component={Data}></Route> 
-            <Route exact path='/view' component={View}></Route> 
+            <Route exact path='/view' component={View}></Route>
+            <Route exact path='/view/:id' component={View}></Route>  
 			  </Switch> 
       </div>
     </Router>
