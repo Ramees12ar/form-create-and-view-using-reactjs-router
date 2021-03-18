@@ -13,11 +13,13 @@ table, th, td {
 }
 table{
     width: 100%;
+    margin-top: 50px;
 }
 th{
     width:50px;
     font-size: 20px;
     font-weight: bold;
+    background-color: antiquewhite;
 }
 button{
     cursor: pointer;
@@ -29,6 +31,7 @@ td{
     width:50px;
     font-size: 16px;
     font-weight: bold;
+    background-color: aquamarine;
 }
 .cap{
     text-transform: capitalize;

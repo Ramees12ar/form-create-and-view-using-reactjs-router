@@ -8,6 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+      <div class="topnav">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -19,6 +20,7 @@ function App() {
 				      <Link to="/view">Details</Link> 
 			    </li> 
 			  </ul> 
+        </div>
 			  <Switch> 
 			      <Route exact path='/' component={Home}></Route> 
             <Route exact path='/data' component={Data}></Route> 

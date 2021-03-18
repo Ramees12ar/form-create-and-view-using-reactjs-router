@@ -8,8 +8,14 @@ class View extends Component {
         }
     }
     async componentDidMount() {
-        var arr =await JSON.parse(localStorage.getItem("sortData"));
-        await this.setState({sort: arr});
+        var str =await (localStorage.getItem("sortData"));
+        if(str!=null ) {
+            var arr = JSON.parse(str);
+            await this.setState({sort: arr});
+        }
+        else {
+            alert("View button not yet clicked!")
+        }
         //console.log(this.state.sort);
     }
     render() {
