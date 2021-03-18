@@ -33,27 +33,27 @@ class Home extends Component {
     Fname = (e) => {
         this.setState({fname: e.target.value});
         var l=e.target.value;
-        var letters = /^[A-Za-z]+$/;
-        if(l.match(letters)){
+        if(l.match(/^[A-Za-z]+$/)){
             this.setState({cmnt1: "accepted"});
             this.setState({id1: "green"})
+            this.setState({cmnt2: "",cmnt3: "",cmnt4:""});
         }
         else{
             this.setState({cmnt1: "please enter only alphabets"});
             this.setState({id1: "red"})
+            this.setState({cmnt2: "",cmnt3: "",cmnt4:""});
         }
     }
     Lname = (e) => {
         this.setState({lname: e.target.value});
         var l=e.target.value;
-        var letters = /^[A-Za-z]+$/;
-        if(l.match(letters)){
-            this.setState({cmnt1: ""});
+        if(l.match(/^[A-Za-z]+$/)){
             this.setState({cmnt2: "accepted"});
             this.setState({id2: "green"})
+            this.setState({cmnt1: "",cmnt3: "",cmnt4:""});
         }
         else{
-            this.setState({cmnt1: ""});
+            this.setState({cmnt1: "",cmnt3: "",cmnt4:""});
             this.setState({cmnt2: "please enter only alphabets"});
             this.setState({id2: "red"})
         }
@@ -61,15 +61,15 @@ class Home extends Component {
     Age = (e) => {
         this.setState({age: e.target.value});
         var z=e.target.value;
-        if(!z.match(/^\d+/)){
-            this.setState({cmnt2: ""});
-            this.setState({cmnt3: "please enter age correctly!"});
-            this.setState({id3: "red"}) 
-        }
-        else {
-            this.setState({cmnt2: ""});
+        if(z.match(/^\d+$/)){
+            this.setState({cmnt1: "",cmnt2: "",cmnt4:""});
             this.setState({cmnt3: "accepted"});
             this.setState({id3: "green"})
+        }
+        else {
+            this.setState({cmnt1: "",cmnt2: "",cmnt4:""});
+            this.setState({cmnt3: "please enter age correctly!"});
+            this.setState({id3: "red"}) 
         }
     }
     DOb = (e) => {
@@ -78,14 +78,13 @@ class Home extends Component {
     Place = (e) => {
         this.setState({place: e.target.value});
         var l=e.target.value;
-        var letters = /^[A-Za-z]+$/;
-        if(l.match(letters)){
-            this.setState({cmnt3: ""});
+        if(l.match(/^[A-Za-z]+$/)){
+            this.setState({cmnt1: "",cmnt2: "",cmnt3:""});
             this.setState({cmnt4: "accepted"});
             this.setState({id4: "green"})
         }
         else{
-            this.setState({cmnt3: ""});
+            this.setState({cmnt1: "",cmnt2: "",cmnt3:""});
             this.setState({cmnt4: "please enter place correctly"});
             this.setState({id4: "red"})
         }

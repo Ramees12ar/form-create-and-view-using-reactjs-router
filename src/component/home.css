@@ -31,6 +31,7 @@ button{
     width:230px;
     float:left;
     margin: 4px;
+    margin-top: 5px;
 }
 #red{
     color:red;
