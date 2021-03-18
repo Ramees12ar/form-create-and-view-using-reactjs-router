@@ -34,42 +34,30 @@ class Home extends Component {
         this.setState({fname: e.target.value});
         var l=e.target.value;
         if(l.match(/^[A-Za-z]+$/)){
-            this.setState({cmnt1: "accepted"});
-            this.setState({id1: "green"})
-            this.setState({cmnt2: "",cmnt3: "",cmnt4:""});
+            this.setState({cmnt2: "",cmnt3: "",cmnt4:"",cmnt1: "accepted",id1: "green"});
         }
         else{
-            this.setState({cmnt1: "please enter only alphabets"});
-            this.setState({id1: "red"})
-            this.setState({cmnt2: "",cmnt3: "",cmnt4:""});
+            this.setState({cmnt2: "",cmnt3: "",cmnt4:"",cmnt1: "please enter only alphabets",id1: "red"});
         }
     }
     Lname = (e) => {
         this.setState({lname: e.target.value});
         var l=e.target.value;
         if(l.match(/^[A-Za-z]+$/)){
-            this.setState({cmnt2: "accepted"});
-            this.setState({id2: "green"})
-            this.setState({cmnt1: "",cmnt3: "",cmnt4:""});
+            this.setState({cmnt1: "",cmnt3: "",cmnt4:"",cmnt2: "accepted",id2: "green"});
         }
         else{
-            this.setState({cmnt1: "",cmnt3: "",cmnt4:""});
-            this.setState({cmnt2: "please enter only alphabets"});
-            this.setState({id2: "red"})
+            this.setState({cmnt1: "",cmnt3: "",cmnt4:"",cmnt2: "please enter only alphabets",id2: "red"});
         }
     }
     Age = (e) => {
         this.setState({age: e.target.value});
         var z=e.target.value;
         if(z.match(/^\d+$/)){
-            this.setState({cmnt1: "",cmnt2: "",cmnt4:""});
-            this.setState({cmnt3: "accepted"});
-            this.setState({id3: "green"})
+            this.setState({cmnt1: "",cmnt2: "",cmnt4:"", cmnt3: "accepted",id3: "green"});
         }
         else {
-            this.setState({cmnt1: "",cmnt2: "",cmnt4:""});
-            this.setState({cmnt3: "please enter age correctly!"});
-            this.setState({id3: "red"}) 
+            this.setState({cmnt1: "",cmnt2: "",cmnt4:"",cmnt3: "please enter age correctly!",id3: "red"});
         }
     }
     DOb = (e) => {
@@ -79,14 +67,10 @@ class Home extends Component {
         this.setState({place: e.target.value});
         var l=e.target.value;
         if(l.match(/^[A-Za-z]+$/)){
-            this.setState({cmnt1: "",cmnt2: "",cmnt3:""});
-            this.setState({cmnt4: "accepted"});
-            this.setState({id4: "green"})
+            this.setState({cmnt1: "",cmnt2: "",cmnt3:"",cmnt4: "accepted",id4: "green"});
         }
         else{
-            this.setState({cmnt1: "",cmnt2: "",cmnt3:""});
-            this.setState({cmnt4: "please enter place correctly"});
-            this.setState({id4: "red"})
+            this.setState({cmnt1: "",cmnt2: "",cmnt3:"",cmnt4: "please enter place correctly",id4: "red"});
         }
     }
     handleSubmit = () => {
@@ -108,9 +92,11 @@ class Home extends Component {
         var age1 = this.state.age;
         var dob1 = this.state.dob;
         var place1 = this.state.place;
+        //console.log(dob1);
         var letters = /^[A-Za-z]+$/;
+        var pattern = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
         if((fname1.match(letters)) && (lname1.match(letters)) && (age1.match(/^\d+/)) && 
-            (dob1!=null) && place1.match(letters)){
+        (dob1 !== null && dob1 !== "" && pattern.test(dob1)) && place1.match(letters)){
             //pushing the collected data to array
             arr.push({
                 fname: fname1,
@@ -136,7 +122,7 @@ class Home extends Component {
             else if((!age1.match(/^\d+/)) || age1==null) {
                 alert("please enter age")
             }
-            else if(dob1==""){
+            else if(dob1 === null || dob1 === "" || !pattern.test(dob1)){
                 alert("please choose date of birth")
             }
             else if((!place1.match(letters)) || place1==null) {

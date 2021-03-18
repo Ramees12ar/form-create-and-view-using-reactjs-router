@@ -30,6 +30,20 @@ class Data extends Component {
         //console.log(this.state.sort);
         localStorage.setItem("sortData", JSON.stringify(newData));       
     }
+
+    //delete data from storage
+    delete = (k) => {
+        var arr = this.state.data;
+        let newData = arr.filter(function (id,index) {
+            return index != k;
+        });
+        if(!window.confirm("Are you sure, you want to delete this task?")){
+            return;
+        }
+        this.setState({ sort: newData });
+        localStorage.setItem("localData", JSON.stringify(newData));
+        window.location.reload();
+    }
     render() {
         return (
             <div className="head2">
@@ -46,7 +60,9 @@ class Data extends Component {
                                 <tr id={k}>
                                         <td class="cap">{i.fname}</td>
                                         <td class="upp">{i.lname}</td>
-                                        <td><button onClick={() => {this.detail(k)}}>view</button></td>
+                                        <td><button style={{backgroundColor:"green"}} onClick={() => {this.detail(k)}}>view</button>
+                                            <button onClick={() => {this.delete(k)}}>delete</button>
+                                        </td>
                                 </tr>
                             )
                         })
